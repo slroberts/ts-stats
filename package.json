@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/slroberts/ts-stats#readme",
   "dependencies": {
+    "@types/node": "^14.14.14",
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.6"
   }
