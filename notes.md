@@ -36,7 +36,7 @@ holdNumber.data = 123
 const holdString = new HoldAnything<string>();
 holdString.data = 'String'
 
-* By convention TypeOfData would be called
+* By convention TypeOfData would be referenced by using T
 class HoldAnything<T> {
   data: T
 }
