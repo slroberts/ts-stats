@@ -1,9 +1,12 @@
+// remember to npm install @types/node for built in node modules
 import fs from 'fs';
 
-export class CsvFileReader<T> {
-  data: string[][] = [];
+export abstract class CsvFileReader<T> {
+  data: T[] = [];
 
   constructor(public filename: string) {}
+
+  abstract mapRow(row: string[]): T;
 
   read(): void {
     this.data = fs
@@ -13,6 +16,7 @@ export class CsvFileReader<T> {
       .split('\n')
       .map((row: string): string[] => {
         return row.split(',');
-      });
+      })
+      .map(this.mapRow);
   }
 }

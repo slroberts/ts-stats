@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CsvFileReader = void 0;
+// remember to npm install @types/node for built in node modules
 var fs_1 = __importDefault(require("fs"));
 var CsvFileReader = /** @class */ (function () {
     function CsvFileReader(filename) {
@@ -18,7 +19,8 @@ var CsvFileReader = /** @class */ (function () {
             .split('\n')
             .map(function (row) {
             return row.split(',');
-        });
+        })
+            .map(this.mapRow);
     };
     return CsvFileReader;
 }());
